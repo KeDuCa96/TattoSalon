@@ -1,0 +1,19 @@
+{
+    "name": "kevin/tatto-salon",
+    "description": "Proyectpo PHP8, MVC, SQL, GULP, etc.",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MVC\\": "./",
+            "Controllers\\": "./controllers",
+            "Model\\": "./models"
+        }
+    },
+    "authors": [
+        {
+            "name": "KeDuCa96",
+            "email": "stevanduran96@gmail.com"
+        }
+    ],
+    "require": {}
+}
