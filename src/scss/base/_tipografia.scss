@@ -4,7 +4,7 @@ h1, h2, h3 {
     font-family: v.$fuente_principal;
     margin: 0 0 calc(v.$separacion / 2) 0 ;
     font-weight: 900;
-    color: v.$blanco;
+    color: v.$white;
     text-align: center;
 }
 
@@ -19,6 +19,16 @@ h3 {
     text-align: center;
 }
 p {
-    color: v.$blanco;
+    color: v.$white;
     font-size: 2rem;
+}
+
+.nombre-pagina{
+    text-align: center;
+    margin: 5rem 0;
+    font-weight: v.$bold;
+}
+
+.descripcion-pagina{
+    text-align: center;
 }

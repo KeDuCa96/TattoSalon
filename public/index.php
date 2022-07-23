@@ -11,13 +11,13 @@ $router->get('/', [LoginController::class, 'login']);
 $router->post('/', [LoginController::class, 'login']);
 $router->get('/logout', [LoginController::class, 'logout']);
     //Recover password
-$router->get('/forget', [LoginController::class, 'forget']);
-$router->post('/forget', [LoginController::class, 'forget']);
-$router->get('/recover', [LoginController::class, 'recover']);
-$router->post('/recover', [LoginController::class, 'recover']);
+$router->get('/olvide-password', [LoginController::class, 'olvidar']);
+$router->post('/olvide-password', [LoginController::class, 'olvidar']);
+$router->get('/recuperar', [LoginController::class, 'recuperar']);
+$router->post('/recuperar', [LoginController::class, 'recuperar']);
     //Crete account
-$router->get('/create', [LoginController::class, 'create']);
-$router->post('/create', [LoginController::class, 'create']);
+$router->get('/crear-cuenta', [LoginController::class, 'crear']);
+$router->post('/crear-cuenta', [LoginController::class, 'crear']);
 
 
 
