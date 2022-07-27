@@ -18,7 +18,7 @@ class Email {
     }
 
     public function enviarConfirmacion(){
-        //Creamos objetos
+        //Creamos objetos -> estas credenciales no las da phpMailer
         $mail = new PHPMailer();
         $mail->isSMTP();
         $mail->Host = 'smtp.mailtrap.io';
@@ -33,12 +33,7 @@ class Email {
 
         $mail->isHTML(TRUE);
         $mail->CharSet = 'UTF-8';
-/* 
-        $contenido = '<html>';
-        $contenido .= "<p><strong>Hola ". $this->nombre . "</strong?> Has creado tu cuenta en tattoo salon. Confirma siguiendo el siguiente enlace</p>";
-        $contenido .= "<p>Presiona aquí: <a href='http://http://tattosalon.test/confirmar-cuenta?token=" . $this->token . "'>Confirmar cuenta</a>";
-        $contenido .= "<p>Si tu no solicitaste esta cuenta, puedes ignorar el mensaje</p>";
-        $contenido .= '</html>'; */
+
         $mail->Body = "
         <html>
         <style>
@@ -88,7 +83,7 @@ class Email {
         }
     </style>
     <body>
-        <h1>BarberShop</h1>
+        <h1>TattooSalon</h1>
         <h2>¡Gracias por registrarte!</h2>
         <p>Por favor confirma tu correo electrónico para que puedas comenzar a disfrutar de todos los servicios de
             TattooSalon</p>
