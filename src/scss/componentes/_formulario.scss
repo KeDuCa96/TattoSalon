@@ -22,6 +22,11 @@
         -moz-border-radius: 1rem;
         -ms-border-radius: 1rem;
         -o-border-radius: 1rem;
-}
 
+        &:disabled{
+            background-color: lighten(v.$blac, 25%);
+            color: v.$white;
+            cursor: not-allowed;
+        }
+    }
 }

@@ -107,7 +107,7 @@ class LoginController{
 
             if(empty($alertas)){
                 $usuario->password = "";
-                $usuario->password = $password->password;
+                $usuario->password = $password->password; // De la istancia de password, le pasamos el password a la instancia de usuario ya que el objeto que usamos es de susario.
                 $usuario->hashPassword();
                 $usuario->token = "";
 
@@ -119,13 +119,9 @@ class LoginController{
                         // Redireccionar al login tras 3 segundos
                     header('Refresh: 3; url=/');
                 }
-
-
-                //debuguear($usuario);
             }
-            //debuguear($password);
         }
-        //debuguear($usuario);
+
 
         $alertas = Usuario::getAlertas();
         $router->render('auth/recuperar-password', [
