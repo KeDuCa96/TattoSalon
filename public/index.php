@@ -30,6 +30,6 @@ $router->get('/mensaje', [LoginController::class, 'mensaje']);
 $router->get('/cita', [CitaController::class, 'index']);
 
         //API
-$router->get('/api/cita', [APIController::class, 'index']);
+$router->get('/api/servicios', [APIController::class, 'index']);
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();  

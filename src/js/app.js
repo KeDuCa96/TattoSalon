@@ -12,6 +12,8 @@ function iniciarApp (){
     botonesPaginador(); // Agrega o elimina botones de paginador
     paginaSiguiente();
     paginaAnterior();
+
+    consultarAPI(); // Consulta la api en el backend de php
 }
 
 
@@ -87,4 +89,16 @@ function paginaSiguiente(){
         botonesPaginador();
         mostrarSeccion();
     });
+}
+    /* Fetch API */
+async function consultarAPI(){ //
+
+    try { //intenta realizar todas las funciones antes de dar error, previene que la app deje de funcionar por error
+        const url = 'http://tattosalon.test/api/cita';
+        const resultado = await fetch(url); //await esperar que se descargue todo o se complete la función. fetch nos permite consumir el servicio.
+        const servicios = await resultado.json();
+        console.log(servicios);
+    } catch (error) {
+        console.log(Error);
+    }
 }
