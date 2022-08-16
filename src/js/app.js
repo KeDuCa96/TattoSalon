@@ -94,11 +94,41 @@ function paginaSiguiente(){
 async function consultarAPI(){ //
 
     try { //intenta realizar todas las funciones antes de dar error, previene que la app deje de funcionar por error
-        const url = 'http://tattosalon.test/api/cita';
+        const url = 'http://tattosalon.test/api/servicios';
         const resultado = await fetch(url); //await esperar que se descargue todo o se complete la función. fetch nos permite consumir el servicio.
         const servicios = await resultado.json();
-        console.log(servicios);
+        mostrarServicios(servicios);
+        
     } catch (error) {
-        console.log(Error);
+        console.log(error);
     }
 }
+
+function mostrarServicios(servicios){
+    servicios.forEach( servicio => {
+        const { id, nombre, precio } = servicio; //descructuring
+        
+        const nombreServicio = document.createElement('P');
+        nombreServicio.classList.add('nombre-servicio');
+        nombreServicio.textContent = nombre;
+
+        const precioServicio = document.createElement('P');
+        precioServicio.classList.add('precio-servicio');
+        precioServicio.textContent = currency(precio);
+
+        const servicioDiv = document.createElement('DIV');
+        servicioDiv.classList.add('servicio');
+        servicioDiv.dataset.idServicio = id;
+
+        servicioDiv.appendChild(nombreServicio);
+        servicioDiv.appendChild(precioServicio);
+
+        document.querySelector('#servicios').appendChild(servicioDiv);
+    });
+}
+
+const currency = (number) => new Intl.NumberFormat("es-co", {
+    style: "currency",
+    currency: "COP",
+    minimumFractionDigits: 0,
+}).format(number);
